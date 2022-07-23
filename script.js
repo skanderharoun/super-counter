@@ -4,14 +4,12 @@ function App() {
     const [displayCounter, setDisplayCounter] = React.useState(true)
     return (
         <div id='app'>
-            <button onClick={() => setDisplayCounter(prevDisplayCounter => !prevDisplayCounter)}>Show/Hide Counter</button>
+            <button onClick={() => setDisplayCounter(prevDisplayCounter => !prevDisplayCounter)} className='btn'>Show/Hide Counter</button>
             {displayCounter && <Counter />}
         </div>
     )
 
 }
-
-
 function Counter() {
 
     const [count, setCount] = React.useState(0)
@@ -37,8 +35,8 @@ function Counter() {
     }
     return (
         <div className="counter" >
-            <h1>Counter: {count}</h1>
-            <h2>Taps: {taps}</h2>
+            <h1 style={{color:'red'}}>Counter: {count}</h1>
+            <h2>Total Taps: {taps}</h2>
             <button onClick={handleIncrement}>Increment +</button>
             <button onClick={handleDecrement} >Decrement -</button>
             <button className="reset-count" onClick={resetTheCount}>Reset Count</button>
